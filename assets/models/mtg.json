@@ -1,0 +1,37 @@
+{
+    "name": "Ancestor's Chosen",
+    "type": "Creature — Human Cleric",
+    "rarity": "Uncommon",
+    "text": "First strike (This creature deals combat damage before creatures without first strike.)\nWhen Ancestor's Chosen enters the battlefield, you gain 1 life for each card in your graveyard.",
+    "artist": "Pete Venters",
+    "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130550&type=card",
+    "foreignNames": [
+        {
+            "name": "Ausgewählter der Ahnfrau",
+            "text": "Erstschlag (Diese Kreatur fügt Kampfschaden vor Kreaturen ohne Erstschlag zu.)\nWenn der Ausgewählte der Ahnfrau ins Spiel kommt, erhältst du 1 Lebenspunkt für jede Karte in deinem Friedhof dazu.",
+            "type": "Kreatur — Mensch, Kleriker",
+            "flavor": "„Es ist der Wille aller, und meine Hand, die ihn ausführt.\"",
+            "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148411&type=card",
+            "language": "German",
+            "multiverseid": 148411
+            },
+            {
+            "name": "Elegido de la Antepasada",
+            "text": "Daña primero. (Esta criatura hace daño de combate antes que las criaturas sin la habilidad de dañar primero.)\nCuando el Elegido de la Antepasada entre en juego, ganas 1 vida por cada carta en tu cementerio.",
+            "type": "Criatura — Clérigo humano",
+            "flavor": "\"La voluntad de todos, realizada por mi mano.\"",
+            "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=150317&type=card",
+            "language": "Spanish",
+            "multiverseid": 150317
+            },
+            {
+            "name": "Élu de l'Ancêtre",
+            "text": "Initiative (Cette créature inflige des blessures de combat avant les créatures sans l'initiative.)\nQuand l'Élu de l'Ancêtre arrive en jeu, vous gagnez 1 point de vie pour chaque carte dans votre cimetière.",
+            "type": "Créature : humain et clerc",
+            "flavor": "« La volonté de tous passe par ma main. »",
+            "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=149934&type=card",
+            "language": "French",
+            "multiverseid": 149934
+            }
+        ]
+}
