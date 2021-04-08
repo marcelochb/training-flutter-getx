@@ -2,22 +2,50 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import 'package:get/get.dart';
 import 'package:pocket_getx/app/components/molecules/cardListItem/cardListItm_widget.dart';
 import 'package:pocket_getx/app/core/theme/color_theme.dart';
-import 'package:pocket_getx/app/data/models/mtg_model.dart';
 
-class MtgListView extends GetView {
+class MtgListView extends StatefulWidget {
+  final List<dynamic> mtgList;
   final bool isLoading;
-  final bool isLoadingMtgListItem;
-  final ScrollController scrollController;
-  final List<Mtg> mtgList;
+  final bool isLoadingInfinityScroll;
 
-  MtgListView(this.isLoading, this.isLoadingMtgListItem, this.scrollController,
-      this.mtgList);
+  final VoidCallback loadData;
+
+  const MtgListView(
+      {Key key,
+      this.mtgList,
+      this.isLoading,
+      this.loadData,
+      this.isLoadingInfinityScroll})
+      : super(key: key);
+
+  @override
+  _MtgListViewState createState() => _MtgListViewState();
+}
+
+class _MtgListViewState extends State<MtgListView> {
+  final ScrollController _scrollController = new ScrollController();
+
+  @override
+  void initState() {
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        widget.loadData();
+      }
+    });
+    super.initState();
+  }
+
+  disposed() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (isLoading)
+    if (widget.isLoading)
       return SpinKitRotatingCircle(
         color: ColorTheme.instance.element,
         size: 50.0,
@@ -26,16 +54,16 @@ class MtgListView extends GetView {
     return Stack(
       children: [
         ListView.builder(
-            itemCount: mtgList.length,
-            controller: scrollController,
+            itemCount: widget.mtgList.length,
+            controller: _scrollController,
             addAutomaticKeepAlives: false,
             dragStartBehavior: DragStartBehavior.down,
             itemBuilder: (context, index) {
               return CardListItemWidget(
-                item: mtgList[index],
+                item: widget.mtgList[index],
               );
             }),
-        if (controller.isLoadingCardListItem)
+        if (widget.isLoadingInfinityScroll)
           Container(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
