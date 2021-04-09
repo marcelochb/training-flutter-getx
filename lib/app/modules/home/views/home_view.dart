@@ -30,10 +30,9 @@ class HomeView extends GetView<HomeController> {
             child: Image.asset('assets/images/logo.png')),
       ),
       body: Obx(() => ListViewWidget(
-            mtgList: controller.mtgList,
+            data: controller.mtgList,
             isLoading: controller.isLoadingPage.value,
             scrollController: controller.listViewInfinityScrollController,
-            loadData: () => controller.getAll(),
             isLoadingInfinityScroll: controller.isLoadingInfinityScroll.value,
             itemBuilder: (_, index) {
               return CardWidget(

@@ -4,19 +4,16 @@ import 'package:pocket_getx/app/components/atoms/loading/loading_widget.dart';
 import 'package:pocket_getx/app/components/atoms/loadingListViewItem/loadingListViewItem_widget.dart';
 
 class ListViewWidget extends StatelessWidget {
-  final List<dynamic> mtgList;
+  final List<dynamic> data;
   final bool isLoading;
   final bool isLoadingInfinityScroll;
   final Widget Function(BuildContext, int) itemBuilder;
   final ScrollController scrollController;
 
-  final VoidCallback loadData;
-
   const ListViewWidget(
       {Key key,
-      this.mtgList,
+      this.data,
       this.isLoading,
-      this.loadData,
       this.isLoadingInfinityScroll,
       this.itemBuilder,
       this.scrollController})
@@ -29,7 +26,7 @@ class ListViewWidget extends StatelessWidget {
     return Stack(
       children: [
         ListView.builder(
-            itemCount: mtgList.length,
+            itemCount: data.length,
             controller: scrollController,
             addAutomaticKeepAlives: false,
             dragStartBehavior: DragStartBehavior.down,
