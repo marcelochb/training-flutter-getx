@@ -5,35 +5,47 @@ class Mtg {
   String text;
   String artist;
   String imageUrl;
+  String id;
   List<ForeignNames> foreignNames;
 
-  Mtg({name, type, rarity, text, artist, imageUrl, foreignNames});
+  Mtg(
+      {this.name = '',
+      this.id = '',
+      this.type = '',
+      this.rarity = '',
+      this.text = '',
+      this.artist = '',
+      this.imageUrl = '',
+      this.foreignNames});
 
   Mtg.fromJson(Map<String, dynamic> json) {
     name = json['name'];
+    id = json['id'];
     type = json['type'];
     rarity = json['rarity'];
     text = json['text'];
     artist = json['artist'];
     imageUrl = json['imageUrl'];
     if (json['foreignNames'] != null) {
-      foreignNames = <ForeignNames>[];
+      foreignNames = [].cast<ForeignNames>();
       json['foreignNames'].forEach((v) {
-        foreignNames.add(ForeignNames.fromJson(v));
+        final _foreignName = ForeignNames.fromJson(v);
+        foreignNames.add(_foreignName);
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['name'] = name;
-    data['type'] = type;
-    data['rarity'] = rarity;
-    data['text'] = text;
-    data['artist'] = artist;
-    data['imageUrl'] = imageUrl;
-    if (foreignNames != null) {
-      data['foreignNames'] = foreignNames.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['name'] = this.name;
+    data['id'] = this.id;
+    data['type'] = this.type;
+    data['rarity'] = this.rarity;
+    data['text'] = this.text;
+    data['artist'] = this.artist;
+    data['imageUrl'] = this.imageUrl;
+    if (this.foreignNames != null) {
+      data['foreignNames'] = this.foreignNames.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -48,7 +60,14 @@ class ForeignNames {
   String language;
   int multiverseid;
 
-  ForeignNames({name, text, type, flavor, imageUrl, language, multiverseid});
+  ForeignNames(
+      {this.name,
+      this.text,
+      this.type,
+      this.flavor,
+      this.imageUrl,
+      this.language,
+      this.multiverseid});
 
   ForeignNames.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -61,14 +80,14 @@ class ForeignNames {
   }
 
   Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['name'] = name;
-    data['text'] = text;
-    data['type'] = type;
-    data['flavor'] = flavor;
-    data['imageUrl'] = imageUrl;
-    data['language'] = language;
-    data['multiverseid'] = multiverseid;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['name'] = this.name;
+    data['text'] = this.text;
+    data['type'] = this.type;
+    data['flavor'] = this.flavor;
+    data['imageUrl'] = this.imageUrl;
+    data['language'] = this.language;
+    data['multiverseid'] = this.multiverseid;
     return data;
   }
 }

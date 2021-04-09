@@ -43,6 +43,8 @@ class HomeController extends GetxController {
     _turnOffLoadingInfinityScroll();
   }
 
+  navigateToDetailPage({@required String id}) => Get.toNamed('/detail/$id');
+
   @override
   void onInit() {
     getAll();

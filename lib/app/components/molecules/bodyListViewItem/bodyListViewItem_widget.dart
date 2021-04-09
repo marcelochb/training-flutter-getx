@@ -2,12 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:pocket_getx/app/components/atoms/image/image_widget.dart';
 import 'package:pocket_getx/app/components/atoms/label/label_widget.dart';
 import 'package:pocket_getx/app/components/atoms/text/text_widget.dart';
-import 'package:pocket_getx/app/data/models/mtg_model.dart';
 
-class CardInfoWidget extends StatelessWidget {
-  const CardInfoWidget({Key key, this.item, this.isBackgroundColorWhite = true})
+class BodyListViewItem extends StatelessWidget {
+  final String name;
+  final String artist;
+  final String type;
+  final String text;
+  final String imageUrl;
+  const BodyListViewItem(
+      {Key key,
+      this.isBackgroundColorWhite = true,
+      this.name,
+      this.artist,
+      this.type,
+      this.text,
+      this.imageUrl})
       : super(key: key);
-  final Mtg item;
   final bool isBackgroundColorWhite;
 
   @override
@@ -20,7 +30,7 @@ class CardInfoWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ImageWidget(
-                src: item.imageUrl,
+                src: imageUrl,
               ),
               Expanded(
                 child: Column(
@@ -30,21 +40,21 @@ class CardInfoWidget extends StatelessWidget {
                         text: 'Nome',
                         isBackgroundColorWhite: isBackgroundColorWhite),
                     TextWidget(
-                        text: item.name,
+                        text: name,
                         isBackgroundColorWhite: isBackgroundColorWhite),
                     LabelWidget(
                         text: 'Artista',
                         isMargingTop: true,
                         isBackgroundColorWhite: isBackgroundColorWhite),
                     TextWidget(
-                        text: item.artist,
+                        text: artist,
                         isBackgroundColorWhite: isBackgroundColorWhite),
                     LabelWidget(
                         text: 'Tipo',
                         isMargingTop: true,
                         isBackgroundColorWhite: isBackgroundColorWhite),
                     TextWidget(
-                        text: item.type,
+                        text: type,
                         isBackgroundColorWhite: isBackgroundColorWhite),
                   ],
                 ),
@@ -61,8 +71,7 @@ class CardInfoWidget extends StatelessWidget {
                   text: 'Descrição',
                   isBackgroundColorWhite: isBackgroundColorWhite),
               TextWidget(
-                  text: item.text,
-                  isBackgroundColorWhite: isBackgroundColorWhite)
+                  text: text, isBackgroundColorWhite: isBackgroundColorWhite)
             ],
           ),
         ),
