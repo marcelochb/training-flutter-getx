@@ -1,20 +1,25 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:pocket_getx/app/data/models/mtg_model.dart';
+import 'package:pocket_getx/app/data/repositories/mtg_repository.dart';
 
 class DetailController extends GetxController {
-  //TODO: Implement DetailController
+  final MtgRepository mtgRepository;
 
-  final count = 0.obs;
+  DetailController({@required this.mtgRepository})
+      : assert(mtgRepository != null);
+
+  final isLoading = true.obs;
+  final Rx<Mtg> mtg = Mtg().obs;
+
   @override
-  void onInit() {
+  void onInit() async {
+    await getById(id: Get.parameters['id']);
+    isLoading.value = false;
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  getById({@required String id}) async {
+    mtg.value = await mtgRepository.getById(id: id);
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

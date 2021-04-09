@@ -3,13 +3,13 @@ import 'package:pocket_getx/app/components/atoms/image/image_widget.dart';
 import 'package:pocket_getx/app/components/atoms/label/label_widget.dart';
 import 'package:pocket_getx/app/components/atoms/text/text_widget.dart';
 
-class BodyListViewItem extends StatelessWidget {
+class CardMtgWidget extends StatelessWidget {
   final String name;
   final String artist;
   final String type;
   final String text;
   final String imageUrl;
-  const BodyListViewItem(
+  const CardMtgWidget(
       {Key key,
       this.isBackgroundColorWhite = true,
       this.name,

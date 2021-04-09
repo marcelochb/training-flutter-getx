@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pocket_getx/app/data/models/mtg_model.dart';
 import 'package:pocket_getx/app/data/providers/mtg_provider.dart';
 
 class MtgRepository {
@@ -6,11 +7,11 @@ class MtgRepository {
 
   MtgRepository({@required this.mtgProvider}) : assert(mtgProvider != null);
 
-  getAllPaginated({int initialPage = 1}) {
+  Future<List<Mtg>> getAllPaginated({int initialPage = 1}) {
     return mtgProvider.getAllPaginated(initialPage: initialPage);
   }
 
-  getById({@required String id}) {
+  Future<Mtg> getById({@required String id}) {
     return mtgProvider.getById(id: id);
   }
 }

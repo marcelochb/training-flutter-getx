@@ -5,11 +5,11 @@ import 'package:pocket_getx/app/data/providers/api_provider_interface.dart';
 import 'package:pocket_getx/app/data/providers/dio_provider.dart';
 
 class MtgProvider {
-  final ApiProviderInterface httpClient;
+  final ApiProviderInterface httpClient = Get.find();
   final _url = '/cards';
   final _pageLimitByRequest = 3;
 
-  MtgProvider({@required this.httpClient}) : assert(httpClient != null);
+  // MtgProvider({@required this.httpClient}) : assert(httpClient != null);
 
   Future<List<Mtg>> getAllPaginated({int initialPage = 1}) async {
     List<Mtg> cards = [];

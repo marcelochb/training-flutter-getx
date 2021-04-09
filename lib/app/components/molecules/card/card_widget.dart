@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocket_getx/app/components/atoms/button/button_widget.dart';
-import 'package:pocket_getx/app/components/molecules/bodyListViewItem/bodyListViewItem_widget.dart';
+import 'package:pocket_getx/app/components/molecules/cardMtg/cardMtg_widget.dart';
 
-class ListViewItemWidget extends StatelessWidget {
+class CardWidget extends StatelessWidget {
   final VoidCallback navigateToDetail;
   final String name;
   final String artist;
@@ -11,7 +11,7 @@ class ListViewItemWidget extends StatelessWidget {
   final String text;
   final String imageUrl;
 
-  const ListViewItemWidget(
+  const CardWidget(
       {Key key,
       this.navigateToDetail,
       this.name,
@@ -28,7 +28,7 @@ class ListViewItemWidget extends StatelessWidget {
       margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
       child: Column(
         children: [
-          BodyListViewItem(
+          CardMtgWidget(
             name: name,
             artist: artist,
             imageUrl: imageUrl,

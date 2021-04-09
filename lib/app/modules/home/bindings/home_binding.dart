@@ -11,9 +11,6 @@ class HomeBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<HomeController>(() => HomeController(
-        mtgRepository: MtgRepository(
-            mtgProvider: MtgProvider(
-                httpClient:
-                    DioProvider(api: Dio(BaseOptions(baseUrl: URL_BASE)))))));
+        mtgRepository: MtgRepository(mtgProvider: MtgProvider())));
   }
 }
