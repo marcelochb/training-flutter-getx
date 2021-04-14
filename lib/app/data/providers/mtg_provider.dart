@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/instance_manager.dart';
 import 'package:pocket_getx/app/data/models/mtg_model.dart';
 import 'package:pocket_getx/app/data/providers/api_provider_interface.dart';
-import 'package:pocket_getx/app/data/providers/dio_provider.dart';
 
 class MtgProvider {
   final ApiProviderInterface httpClient = Get.find();

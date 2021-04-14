@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pocket_getx/app/data/repositories/mtg_repository.dart';
-import 'package:pocket_getx/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
   final MtgRepository mtgRepository;
