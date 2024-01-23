@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocket_getx/app/components/atoms/image/image_widget.dart';
 import 'package:pocket_getx/app/components/atoms/label/label_widget.dart';
@@ -6,7 +5,8 @@ import 'package:pocket_getx/app/components/atoms/text/text_widget.dart';
 import 'package:pocket_getx/app/data/models/mtg_model.dart';
 
 class CardForeignNameWidget extends StatelessWidget {
-  const CardForeignNameWidget({Key key, this.item, this.isBackgroundColorWhite})
+  const CardForeignNameWidget(
+      {Key? key, required this.item, required this.isBackgroundColorWhite})
       : super(key: key);
   final ForeignNames item;
   final bool isBackgroundColorWhite;

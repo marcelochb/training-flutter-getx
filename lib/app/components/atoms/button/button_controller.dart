@@ -10,7 +10,7 @@ class ButtonController extends ChangeNotifier {
     notifyListeners();
   }
 
-  ButtonController({double size}) {
+  ButtonController({required double size}) {
     this.size = size;
   }
 }

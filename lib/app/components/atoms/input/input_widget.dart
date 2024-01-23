@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InputWidget extends StatelessWidget {
@@ -10,11 +9,11 @@ class InputWidget extends StatelessWidget {
   final FocusNode focusNode;
 
   const InputWidget({
-    Key key,
-    this.label,
-    this.onChanged,
-    this.onFieldSubmitted,
-    this.focusNode,
+    required Key key,
+    required this.label,
+    required this.onChanged,
+    required this.onFieldSubmitted,
+    required this.focusNode,
     this.isSecurityText = false,
     this.autoFocus = false,
   }) : super(key: key);

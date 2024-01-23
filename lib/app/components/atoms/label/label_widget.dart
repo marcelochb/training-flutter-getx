@@ -3,8 +3,8 @@ import 'package:pocket_getx/app/core/theme/color_theme.dart';
 
 class LabelWidget extends StatelessWidget {
   const LabelWidget(
-      {Key key,
-      this.text,
+      {Key? key,
+      required this.text,
       this.isMargingTop = false,
       this.isBackgroundColorWhite = true})
       : super(key: key);

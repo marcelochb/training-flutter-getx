@@ -1,12 +1,12 @@
 class Mtg {
-  String name;
-  String type;
-  String rarity;
-  String text;
-  String artist;
-  String imageUrl;
-  String id;
-  List<ForeignNames> foreignNames;
+  late String name;
+  late String type;
+  late String rarity;
+  late String text;
+  late String artist;
+  late String imageUrl;
+  late String id;
+  late List<ForeignNames> foreignNames;
 
   Mtg(
       {this.name = '',
@@ -16,7 +16,7 @@ class Mtg {
       this.text = '',
       this.artist = '',
       this.imageUrl = '',
-      this.foreignNames});
+      this.foreignNames = const []});
 
   Mtg.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -25,7 +25,7 @@ class Mtg {
     rarity = json['rarity'];
     text = json['text'];
     artist = json['artist'];
-    imageUrl = json['imageUrl'];
+    imageUrl = json['imageUrl'] ?? '';
     if (json['foreignNames'] != null) {
       foreignNames = [].cast<ForeignNames>();
       json['foreignNames'].forEach((v) {
@@ -44,30 +44,28 @@ class Mtg {
     data['text'] = this.text;
     data['artist'] = this.artist;
     data['imageUrl'] = this.imageUrl;
-    if (this.foreignNames != null) {
-      data['foreignNames'] = this.foreignNames.map((v) => v.toJson()).toList();
-    }
+    data['foreignNames'] = this.foreignNames.map((v) => v.toJson()).toList();
     return data;
   }
 }
 
 class ForeignNames {
-  String name;
-  String text;
-  String type;
-  String flavor;
-  String imageUrl;
-  String language;
-  int multiverseid;
+  late String name;
+  late String text;
+  late String type;
+  late String flavor;
+  late String imageUrl;
+  late String language;
+  late int multiverseid;
 
   ForeignNames(
-      {this.name,
-      this.text,
-      this.type,
-      this.flavor,
-      this.imageUrl,
-      this.language,
-      this.multiverseid});
+      {this.name = '',
+      this.text = '',
+      this.type = '',
+      this.flavor = '',
+      this.imageUrl = '',
+      this.language = '',
+      this.multiverseid = 0});
 
   ForeignNames.fromJson(Map<String, dynamic> json) {
     name = json['name'];

@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocket_getx/app/core/theme/color_theme.dart';
 
 import 'button_controller.dart';
 
 class ButtonWidget extends StatefulWidget {
-  const ButtonWidget({Key key, this.label, this.onPress}) : super(key: key);
+  const ButtonWidget({Key? key, required this.label, required this.onPress})
+      : super(key: key);
   final String label;
   final VoidCallback onPress;
 

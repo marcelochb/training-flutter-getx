@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
 import 'package:pocket_getx/app/data/providers/api_provider_interface.dart';
 
 class DioProvider implements ApiProviderInterface {
   final Dio api;
-  DioProvider({@required this.api});
+  DioProvider({required this.api});
 
   getPaginated(String baseUrl, int initialPage, int pageLimitByRequest) async {
     return await api.get(

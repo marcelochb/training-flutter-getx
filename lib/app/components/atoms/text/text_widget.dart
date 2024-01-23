@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TextWidget extends StatelessWidget {
-  const TextWidget({Key key, this.text, this.isBackgroundColorWhite = true})
+  const TextWidget(
+      {Key? key, required this.text, this.isBackgroundColorWhite = true})
       : super(key: key);
   final String text;
   final bool isBackgroundColorWhite;

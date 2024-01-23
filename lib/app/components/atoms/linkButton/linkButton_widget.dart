@@ -4,7 +4,9 @@ import 'package:pocket_getx/app/core/theme/color_theme.dart';
 class LinkButtonWidget extends StatelessWidget {
   final String label;
   final VoidCallback onPress;
-  const LinkButtonWidget({Key key, this.label, this.onPress}) : super(key: key);
+  const LinkButtonWidget(
+      {required Key key, required this.label, required this.onPress})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

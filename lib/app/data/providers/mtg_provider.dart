@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/instance_manager.dart';
 import 'package:pocket_getx/app/data/models/mtg_model.dart';
 import 'package:pocket_getx/app/data/providers/api_provider_interface.dart';
@@ -31,14 +30,13 @@ class MtgProvider {
     return cards;
   }
 
-  Future<Mtg> getById({@required String id}) async {
-    Mtg card;
+  Future<Mtg> getById({required String id}) async {
     try {
       final response = await httpClient.getAll('$_url/$id');
-      card = Mtg.fromJson(response.data['card']);
+      return Mtg.fromJson(response.data['card']);
     } catch (e) {
       print('Error api $e');
+      throw Exception('Problemas para recuperar os dados');
     }
-    return card;
   }
 }

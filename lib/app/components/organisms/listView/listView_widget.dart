@@ -11,12 +11,12 @@ class ListViewWidget extends StatelessWidget {
   final ScrollController scrollController;
 
   const ListViewWidget(
-      {Key key,
-      this.data,
-      this.isLoading,
-      this.isLoadingInfinityScroll,
-      this.itemBuilder,
-      this.scrollController})
+      {Key? key,
+      required this.data,
+      required this.isLoading,
+      required this.isLoadingInfinityScroll,
+      required this.itemBuilder,
+      required this.scrollController})
       : super(key: key);
 
   @override

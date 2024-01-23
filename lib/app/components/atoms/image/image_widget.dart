@@ -1,11 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:pocket_getx/app/core/theme/color_theme.dart';
 
 class ImageWidget extends StatelessWidget {
-  const ImageWidget({Key key, this.src}) : super(key: key);
+  const ImageWidget({Key? key, required this.src}) : super(key: key);
   final String src;
 
   Widget _container(Widget _child) {
@@ -24,7 +23,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (src != null && src != '')
+    if (src != '')
       // return _container(Image.network(src));
       return _container(
         CachedNetworkImage(

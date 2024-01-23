@@ -10,13 +10,13 @@ class CardMtgWidget extends StatelessWidget {
   final String text;
   final String imageUrl;
   const CardMtgWidget(
-      {Key key,
+      {Key? key,
       this.isBackgroundColorWhite = true,
-      this.name,
-      this.artist,
-      this.type,
-      this.text,
-      this.imageUrl})
+      required this.name,
+      required this.artist,
+      required this.type,
+      required this.text,
+      required this.imageUrl})
       : super(key: key);
   final bool isBackgroundColorWhite;
 

@@ -5,8 +5,7 @@ import 'package:pocket_getx/app/data/repositories/mtg_repository.dart';
 class HomeController extends GetxController {
   final MtgRepository mtgRepository;
 
-  HomeController({@required this.mtgRepository})
-      : assert(mtgRepository != null);
+  HomeController({required this.mtgRepository});
 
   final RxList<dynamic> mtgList = [].obs;
   final RxBool isLoadingPage = true.obs;
@@ -67,5 +66,5 @@ class HomeController extends GetxController {
     _turnOffLoadingInfinityScroll();
   }
 
-  navigateToDetailPage({@required String id}) => Get.toNamed('/detail/$id');
+  navigateToDetailPage({required String id}) => Get.toNamed('/detail/$id');
 }

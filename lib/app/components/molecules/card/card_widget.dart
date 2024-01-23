@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocket_getx/app/components/atoms/button/button_widget.dart';
 import 'package:pocket_getx/app/components/molecules/cardMtg/cardMtg_widget.dart';
@@ -12,13 +11,13 @@ class CardWidget extends StatelessWidget {
   final String imageUrl;
 
   const CardWidget(
-      {Key key,
-      this.navigateToDetail,
-      this.name,
-      this.artist,
-      this.type,
-      this.text,
-      this.imageUrl})
+      {Key? key,
+      required this.navigateToDetail,
+      required this.name,
+      required this.artist,
+      required this.type,
+      required this.text,
+      required this.imageUrl})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
